@@ -15,6 +15,8 @@ namespace :deploy do
           "then mkdir -p #{deploy_to}",
           "cd #{deploy_to}",
           "#{scm_command} clone #{repository} #{path}",
+        "else echo 'WARNING: #{path} already exists... maybe try deploy:warm?' 2>&1",
+          "exit 1",
         "fi"
       ].join("; ")
     end
@@ -68,7 +70,7 @@ namespace :deploy do
     task :remove_current, :except => { :no_release => true } do
       # test -h => symlink
       run [
-        "if [ -h #{current_path} ]",
+        "if [ -e #{current_path} ]",
           "then mv #{current_path} #{current_path}.old",
         "fi"
       ].join("; ")

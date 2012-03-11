@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Ian Duggan"]
   s.email       = ["ian@ianduggan.net"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Capistrano deploy strategy that uses git clone}
+  s.description = %q{Capistrano deploy strategy that uses git clon}
 
   s.rubyforge_project = "capistrano-git-deploy"
 
