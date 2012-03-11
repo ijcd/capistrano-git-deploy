@@ -1,0 +1,46 @@
+= capistrano-git-depoy
+
+Before (with fast_remote_cache deploy strategy):
+
+  $ time cap staging deploy:update
+
+  ...
+
+  real	1m56.811s
+  user	0m0.560s
+  sys	0m0.118s
+
+
+After:
+
+  $ time cap staging deploy:update
+
+  ...
+
+  real	0m19.987s
+  user	0m0.538s
+  sys	0m0.110s
+
+== Get the Gem
+
+  gem install capistrano
+  gem install capistrano-git-deploy
+
+or in your Gemfile
+
+  gem "capistrano"
+  gem "capistrano-git-deploy" 
+
+== Use it from your config/deploy.rb
+
+  require 'capistrano-git-deploy'
+
+== Switch an existing project:
+
+  cap deploy:warm
+
+== Setup a new project:
+
+  cap deploy:setup
+  cap deploy:cold
+  cap deploy
