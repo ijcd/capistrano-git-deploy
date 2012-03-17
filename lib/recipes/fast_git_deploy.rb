@@ -90,6 +90,11 @@ namespace :deploy do
     symlink_system_files
     set_revisions
   end
+  
+  # Capistrano renamed :symlink to :create_symlink
+  task :create_symlink do
+    symlink
+  end
 
   desc "Symlink system files"
   task :symlink_system_files, :except => { :no_release => true } do
