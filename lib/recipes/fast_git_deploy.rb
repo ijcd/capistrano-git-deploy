@@ -59,7 +59,7 @@ namespace :deploy do
     run [
       "cd #{current_path}",
       "#{scm_command} fetch",
-      "#{scm_command} reset --hard origin/#{branch}"
+      "#{scm_command} reset --hard #{branch}"
     ].join(" && ")
 
     finalize_update
